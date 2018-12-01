@@ -1,4 +1,4 @@
-package com.rorasoft.roragame.ui;
+package com.rorasoft.roragame.View;
 
 
 import android.app.Activity;

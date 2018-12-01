@@ -20,7 +20,7 @@ import com.roragame.nvstream.NvConnection;
 import com.roragame.nvstream.input.ControllerPacket;
 import com.roragame.nvstream.input.MouseButtonPacket;
 import com.rorasoft.roragame.preferences.PreferenceConfiguration;
-import com.rorasoft.roragame.ui.GameGestures;
+import com.rorasoft.roragame.View.GameGestures;
 import com.rorasoft.roragame.utils.Vector2d;
 
 import java.lang.reflect.InvocationTargetException;
