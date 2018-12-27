@@ -67,33 +67,33 @@ public class NvHTTP {
 	private KeyManager[] ourKeyman;
 	
 	private void initializeHttpState(final LimelightCryptoProvider cryptoProvider) {
-		trustAllCerts = new TrustManager[] { 
-				new X509TrustManager() {
-					public X509Certificate[] getAcceptedIssuers() { 
-						return new X509Certificate[0]; 
-					}
-					public void checkClientTrusted(X509Certificate[] certs, String authType) {}
-					public void checkServerTrusted(X509Certificate[] certs, String authType) {}
-				}};
-
-		ourKeyman = new KeyManager[] {
-				new X509KeyManager() {
-					public String chooseClientAlias(String[] keyTypes,
-							Principal[] issuers, Socket socket) { return "Limelight-RSA"; }
-					public String chooseServerAlias(String keyType, Principal[] issuers,
-							Socket socket) { return null; }
-					public X509Certificate[] getCertificateChain(String alias) {
-						return new X509Certificate[] {cryptoProvider.getClientCertificate()};
-					}
-					public String[] getClientAliases(String keyType, Principal[] issuers) { return null; }
-					public PrivateKey getPrivateKey(String alias) {
-						return cryptoProvider.getClientPrivateKey();
-					}
-					public String[] getServerAliases(String keyType, Principal[] issuers) { return null; }
-				}
-		};
-
-		// Ignore differences between given hostname and certificate hostname
+//		trustAllCerts = new TrustManager[] {
+//				new X509TrustManager() {
+//					public X509Certificate[] getAcceptedIssuers() {
+//						return new X509Certificate[0];
+//					}
+//					public void checkClientTrusted(X509Certificate[] certs, String authType) {}
+//					public void checkServerTrusted(X509Certificate[] certs, String authType) {}
+//				}};
+//
+//		ourKeyman = new KeyManager[] {
+//				new X509KeyManager() {
+//					public String chooseClientAlias(String[] keyTypes,
+//							Principal[] issuers, Socket socket) { return "Limelight-RSA"; }
+//					public String chooseServerAlias(String keyType, Principal[] issuers,
+//							Socket socket) { return null; }
+//					public X509Certificate[] getCertificateChain(String alias) {
+//						return new X509Certificate[] {cryptoProvider.getClientCertificate()};
+//					}
+//					public String[] getClientAliases(String keyType, Principal[] issuers) { return null; }
+//					public PrivateKey getPrivateKey(String alias) {
+//						return cryptoProvider.getClientPrivateKey();
+//					}
+//					public String[] getServerAliases(String keyType, Principal[] issuers) { return null; }
+//				}
+//		};
+//
+//		// Ignore differences between given hostname and certificate hostname
 		HostnameVerifier hv = new HostnameVerifier() {
 			public boolean verify(String hostname, SSLSession session) { return true; }
 		};

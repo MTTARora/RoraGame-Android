@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rorasoft.roragame">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -28,16 +27,16 @@
     <!-- Disable legacy input emulation on ChromeOS -->
     <uses-feature
         android:name="android.hardware.type.pc"
-        android:required="false"/>
+        android:required="false" />
 
     <application
-        android:fullBackupContent="@xml/backup_rules"
-        android:networkSecurityConfig="@xml/network_security_config"
-        android:isGame="true"
         android:appCategory="game"
-        android:icon="@mipmap/ic_launcher"
         android:banner="@drawable/atv_banner"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:isGame="true"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -51,13 +50,15 @@
             android:name="com.sec.android.support.multiwindow"
             android:value="true" />
 
-        <!-- Samsung DeX support requires explicit placement of android:resizeableActivity="true"
-             in each activity even though it is implied by targeting API 24+ -->
+        <!--
+             Samsung DeX support requires explicit placement of android:resizeableActivity="true"
+             in each activity even though it is implied by targeting API 24+
+        -->
 
         <activity
             android:name=".View.PcView"
-            android:resizeableActivity="true"
-            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection">
+            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+            android:resizeableActivity="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -71,34 +72,34 @@
         <!-- Small hack to support launcher shortcuts without relaunching over and over again when the back button is pressed -->
         <activity
             android:name=".ShortcutTrampoline"
-            android:noHistory="true"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
             android:exported="true"
-            android:resizeableActivity="true"
-            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection">
+            android:noHistory="true"
+            android:resizeableActivity="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.rorasoft.roragame.View.PcView" />
         </activity>
         <activity
             android:name=".View.AppView"
-            android:resizeableActivity="true"
-            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection">
+            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+            android:resizeableActivity="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.rorasoft.roragame.View.PcView" />
         </activity>
         <activity
             android:name=".Services.preferences.StreamSettings"
-            android:resizeableActivity="true"
-            android:label="Streaming Settings">
+            android:label="Streaming Settings"
+            android:resizeableActivity="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.rorasoft.roragame.View.PcView" />
         </activity>
         <activity
             android:name=".Services.preferences.AddComputerManually"
-            android:resizeableActivity="true"
-            android:label="Add Computer Manually">
+            android:label="Add Computer Manually"
+            android:resizeableActivity="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.rorasoft.roragame.View.PcView" />
@@ -107,12 +108,12 @@
         <activity
             android:name=".View.GameList.Game"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
-            android:screenOrientation="userLandscape"
-            android:noHistory="true"
-            android:supportsPictureInPicture="true"
-            android:resizeableActivity="true"
-            android:launchMode="singleTask"
             android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:resizeableActivity="true"
+            android:screenOrientation="userLandscape"
+            android:supportsPictureInPicture="true"
             android:theme="@style/StreamTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -131,11 +132,20 @@
 
         <activity
             android:name=".View.HelpActivity"
-            android:resizeableActivity="true"
-            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection">
+            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+            android:resizeableActivity="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.rorasoft.roragame.View.PcView" />
+        </activity>
+        <activity
+            android:name=".View.Home.HomeActivity"
+            android:label="@string/title_activity_home">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

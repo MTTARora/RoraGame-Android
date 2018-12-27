@@ -99,7 +99,7 @@ public class AddComputerManually extends Activity {
             getResources().getString(R.string.msg_add_pc), false);
 
         success = managerBinder.addComputerBlocking(host, true);
-        if (!success){
+        if (!success) {
             wrongSiteLocal = isWrongSubnetSiteLocalAddress(host);
         }
 
@@ -107,11 +107,9 @@ public class AddComputerManually extends Activity {
 
         if (wrongSiteLocal) {
             Dialog.displayDialog(this, getResources().getString(R.string.conn_error_title), getResources().getString(R.string.addpc_wrong_sitelocal), false);
-        }
-        else if (!success) {
+        } else if (!success) {
             Dialog.displayDialog(this, getResources().getString(R.string.conn_error_title), getResources().getString(R.string.addpc_fail), false);
-        }
-        else {
+        } else {
             AddComputerManually.this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {

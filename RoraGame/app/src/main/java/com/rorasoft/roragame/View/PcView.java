@@ -379,12 +379,12 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
                             managerBinder.getUniqueId(),
                             PlatformBinding.getDeviceName(),
                             PlatformBinding.getCryptoProvider(PcView.this));
+
                     if (httpConn.getPairState() == PairingManager.PairState.PAIRED) {
                         // Don't display any toast, but open the app list
                         message = null;
                         success = true;
-                    }
-                    else {
+                    } else {
                         final String pinStr = PairingManager.generatePinString();
 
                         // Spin the dialog off in a thread because it blocks
@@ -394,14 +394,11 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
                         PairingManager.PairState pairState = httpConn.pair(httpConn.getServerInfo(), pinStr);
                         if (pairState == PairingManager.PairState.PIN_WRONG) {
                             message = getResources().getString(R.string.pair_incorrect_pin);
-                        }
-                        else if (pairState == PairingManager.PairState.FAILED) {
+                        } else if (pairState == PairingManager.PairState.FAILED) {
                             message = getResources().getString(R.string.pair_fail);
-                        }
-                        else if (pairState == PairingManager.PairState.ALREADY_IN_PROGRESS) {
+                        } else if (pairState == PairingManager.PairState.ALREADY_IN_PROGRESS) {
                             message = getResources().getString(R.string.pair_already_in_progress);
-                        }
-                        else if (pairState == PairingManager.PairState.PAIRED) {
+                        } else if (pairState == PairingManager.PairState.PAIRED) {
                             // Just navigate to the app view without displaying a toast
                             message = null;
                             success = true;
@@ -409,8 +406,7 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
                             // Invalidate reachability information after pairing to force
                             // a refresh before reading pair state again
                             managerBinder.invalidateStateForComputer(computer.uuid);
-                        }
-                        else {
+                        } else {
                             // Should be no other values
                             message = null;
                         }
