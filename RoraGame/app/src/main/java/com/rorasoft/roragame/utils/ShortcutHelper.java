@@ -1,4 +1,4 @@
-package com.rorasoft.roragame.Utils;
+package com.rorasoft.roragame.utils;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Icon;
 import android.os.Build;
 
-import com.rorasoft.roragame.View.AppView;
+import com.rorasoft.roragame.AppView;
 import com.rorasoft.roragame.ShortcutTrampoline;
 import com.rorasoft.roragame.R;
 import com.roragame.nvstream.http.ComputerDetails;

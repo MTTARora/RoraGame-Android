@@ -11,7 +11,7 @@
             android:entries="@array/resolution_names"
             android:entryValues="@array/resolution_values"
             android:defaultValue="720p60" />
-        <com.rorasoft.roragame.Services.preferences.SeekBarPreference
+        <com.rorasoft.roragame.preferences.SeekBarPreference
             android:key="seekbar_bitrate_kbps"
             android:dialogMessage="@string/summary_seekbar_bitrate"
             seekbar:min="500"
@@ -79,7 +79,7 @@
             android:key="checkbox_only_show_L3R3"
             android:summary="@string/summary_only_l3r3"
             android:title="@string/title_only_l3r3" />
-        <com.rorasoft.roragame.Services.preferences.ConfirmDeleteOscPreference
+        <com.rorasoft.roragame.preferences.ConfirmDeleteOscPreference
             android:title="@string/title_reset_osc"
             android:summary="@string/summary_reset_osc"
             android:dialogTitle="@string/dialog_title_reset_osc"
@@ -109,7 +109,7 @@
             android:entryValues="@array/language_values"
             android:summary="@string/summary_language_list"
             android:defaultValue="default" />
-        <com.rorasoft.roragame.Services.preferences.SmallIconCheckboxPreference
+        <com.rorasoft.roragame.preferences.SmallIconCheckboxPreference
             android:key="checkbox_small_icon_mode"
             android:title="@string/title_checkbox_small_icon_mode"
             android:summary="@string/summary_checkbox_small_icon_mode" />

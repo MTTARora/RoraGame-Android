@@ -1,4 +1,4 @@
-package com.rorasoft.roragame.Utils;
+package com.rorasoft.roragame.utils;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,7 +6,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 
-import com.rorasoft.roragame.View.HelpActivity;
+import com.rorasoft.roragame.HelpActivity;
 
 public class HelpLauncher {
 

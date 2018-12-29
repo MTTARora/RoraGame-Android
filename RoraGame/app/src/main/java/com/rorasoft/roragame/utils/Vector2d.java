@@ -1,4 +1,4 @@
-package com.rorasoft.roragame.Utils;
+package com.rorasoft.roragame.utils;
 
 public class Vector2d {
 	private float x;

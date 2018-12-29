@@ -1,4 +1,4 @@
-package com.rorasoft.roragame.Utils;
+package com.rorasoft.roragame.utils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

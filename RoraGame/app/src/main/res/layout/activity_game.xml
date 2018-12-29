@@ -2,9 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.GameList.Game" >
+    tools:context=".Game" >
 
-    <com.rorasoft.roragame.View.Streaming.StreamView
+    <com.rorasoft.roragame.View.StreamView
         android:id="@+id/surfaceView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
