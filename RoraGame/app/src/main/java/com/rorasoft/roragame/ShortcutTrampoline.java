@@ -8,15 +8,17 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 
-import com.roragame.nvstream.http.ComputerDetails;
-import com.roragame.nvstream.http.NvApp;
-import com.roragame.nvstream.http.PairingManager;
-import com.rorasoft.roragame.computers.ComputerManagerListener;
-import com.rorasoft.roragame.computers.ComputerManagerService;
-import com.rorasoft.roragame.utils.Dialog;
-import com.rorasoft.roragame.utils.ServerHelper;
-import com.rorasoft.roragame.utils.SpinnerDialog;
-import com.rorasoft.roragame.utils.UiHelper;
+import com.limelight.nvstream.http.ComputerDetails;
+import com.limelight.nvstream.http.NvApp;
+import com.limelight.nvstream.http.PairingManager;
+import com.rorasoft.roragame.View.AppView;
+import com.rorasoft.roragame.Model.computers.ComputerManagerListener;
+import com.rorasoft.roragame.Model.computers.ComputerManagerService;
+import com.rorasoft.roragame.Utils.Dialog;
+import com.rorasoft.roragame.Utils.ServerHelper;
+import com.rorasoft.roragame.Utils.SpinnerDialog;
+import com.rorasoft.roragame.Utils.UiHelper;
+import com.rorasoft.roragame.View.PcView;
 
 import java.util.ArrayList;
 import java.util.UUID;

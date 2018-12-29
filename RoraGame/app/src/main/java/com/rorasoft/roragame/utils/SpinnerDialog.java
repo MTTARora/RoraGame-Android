@@ -1,4 +1,4 @@
-package com.rorasoft.roragame.utils;
+package com.rorasoft.roragame.Utils;
 
 import java.util.ArrayList;
 import java.util.Iterator;

@@ -24,11 +24,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.roragame.LimeLog;
-import com.roragame.nvstream.http.ComputerDetails;
-import com.roragame.nvstream.http.NvApp;
-import com.roragame.nvstream.http.NvHTTP;
-import com.roragame.nvstream.http.PairingManager;
+import com.limelight.nvstream.http.ComputerDetails;
 import com.rorasoft.roragame.Model.computers.ComputerManagerListener;
 import com.rorasoft.roragame.Model.computers.ComputerManagerService;
 import com.rorasoft.roragame.R;

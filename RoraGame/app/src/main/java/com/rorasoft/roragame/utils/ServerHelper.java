@@ -1,17 +1,17 @@
-package com.rorasoft.roragame.utils;
+package com.rorasoft.roragame.Utils;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.widget.Toast;
 
-import com.rorasoft.roragame.Game;
+import com.limelight.nvstream.http.ComputerDetails;
+import com.limelight.nvstream.http.GfeHttpResponseException;
+import com.limelight.nvstream.http.NvApp;
+import com.limelight.nvstream.http.NvHTTP;
+import com.rorasoft.roragame.View.GameList.Game;
 import com.rorasoft.roragame.R;
-import com.rorasoft.roragame.binding.PlatformBinding;
-import com.rorasoft.roragame.computers.ComputerManagerService;
-import com.roragame.nvstream.http.ComputerDetails;
-import com.roragame.nvstream.http.GfeHttpResponseException;
-import com.roragame.nvstream.http.NvApp;
-import com.roragame.nvstream.http.NvHTTP;
+import com.rorasoft.roragame.Services.binding.PlatformBinding;
+import com.rorasoft.roragame.Model.computers.ComputerManagerService;
 
 import java.io.FileNotFoundException;
 import java.net.UnknownHostException;
