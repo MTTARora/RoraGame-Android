@@ -8,7 +8,7 @@ import android.graphics.ImageDecoder;
 import android.os.Build;
 
 import com.limelight.LimeLog;
-import com.rorasoft.roragame.Utils.CacheHelper;
+import com.rorasoft.roragame.Utils.Helper.CacheHelper;
 
 import java.io.File;
 import java.io.IOException;

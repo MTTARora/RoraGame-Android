@@ -26,7 +26,7 @@ import com.rorasoft.roragame.Services.preferences.PreferenceConfiguration;
 import com.rorasoft.roragame.Interfaces.GameGestures;
 import com.rorasoft.roragame.View.Streaming.StreamView;
 import com.rorasoft.roragame.Utils.Dialog;
-import com.rorasoft.roragame.Utils.ShortcutHelper;
+import com.rorasoft.roragame.Utils.Helper.ShortcutHelper;
 import com.rorasoft.roragame.Utils.SpinnerDialog;
 import com.rorasoft.roragame.Utils.UiHelper;
 

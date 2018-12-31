@@ -1,48 +1,19 @@
 package com.rorasoft.roragame.View.GameList;
 
-import android.app.Service;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.os.IBinder;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.limelight.nvstream.http.ComputerDetails;
-import com.rorasoft.roragame.Model.computers.ComputerManagerListener;
 import com.rorasoft.roragame.Model.computers.ComputerManagerService;
 import com.rorasoft.roragame.R;
-import com.rorasoft.roragame.Services.preferences.PreferenceConfiguration;
-import com.rorasoft.roragame.Utils.CacheHelper;
-import com.rorasoft.roragame.Utils.Dialog;
-import com.rorasoft.roragame.Utils.ServerHelper;
-import com.rorasoft.roragame.Utils.ShortcutHelper;
+import com.rorasoft.roragame.Utils.Helper.ShortcutHelper;
 import com.rorasoft.roragame.Utils.SpinnerDialog;
-import com.rorasoft.roragame.Utils.UiHelper;
-import com.rorasoft.roragame.View.Adapter.AdapterFragment;
-import com.rorasoft.roragame.View.Adapter.AdapterFragmentCallbacks;
-import com.rorasoft.roragame.View.AppView;
 import com.rorasoft.roragame.View.Custom.grid.AppGridAdapter;
-
-import java.io.StringReader;
-import java.util.List;
-import java.util.UUID;
 
 /**
  * A simple {@link Fragment} subclass.

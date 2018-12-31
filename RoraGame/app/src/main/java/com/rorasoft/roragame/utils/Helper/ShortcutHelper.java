@@ -1,4 +1,4 @@
-package com.rorasoft.roragame.Utils;
+package com.rorasoft.roragame.Utils.Helper;
 
 import android.annotation.TargetApi;
 import android.content.Context;

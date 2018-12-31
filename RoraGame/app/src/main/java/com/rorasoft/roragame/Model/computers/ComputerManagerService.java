@@ -20,8 +20,8 @@ import com.limelight.nvstream.mdns.MdnsComputer;
 import com.limelight.nvstream.mdns.MdnsDiscoveryListener;
 import com.rorasoft.roragame.Services.binding.PlatformBinding;
 import com.rorasoft.roragame.Services.discovery.DiscoveryService;
-import com.rorasoft.roragame.Utils.CacheHelper;
-import com.rorasoft.roragame.Utils.ServerHelper;
+import com.rorasoft.roragame.Utils.Helper.CacheHelper;
+import com.rorasoft.roragame.Utils.Helper.ServerHelper;
 
 import android.app.Service;
 import android.content.ComponentName;

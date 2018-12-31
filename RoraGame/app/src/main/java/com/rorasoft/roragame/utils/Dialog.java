@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.widget.Button;
 
 import com.rorasoft.roragame.R;
+import com.rorasoft.roragame.Utils.Helper.HelpLauncher;
 
 public class Dialog implements Runnable {
     private final String title;

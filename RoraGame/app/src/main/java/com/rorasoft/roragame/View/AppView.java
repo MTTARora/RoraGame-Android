@@ -16,10 +16,10 @@ import com.rorasoft.roragame.Model.computers.ComputerManagerListener;
 import com.rorasoft.roragame.Model.computers.ComputerManagerService;
 import com.rorasoft.roragame.View.Custom.grid.AppGridAdapter;
 import com.rorasoft.roragame.Services.preferences.PreferenceConfiguration;
-import com.rorasoft.roragame.Utils.CacheHelper;
+import com.rorasoft.roragame.Utils.Helper.CacheHelper;
 import com.rorasoft.roragame.Utils.Dialog;
-import com.rorasoft.roragame.Utils.ServerHelper;
-import com.rorasoft.roragame.Utils.ShortcutHelper;
+import com.rorasoft.roragame.Utils.Helper.ServerHelper;
+import com.rorasoft.roragame.Utils.Helper.ShortcutHelper;
 import com.rorasoft.roragame.Utils.SpinnerDialog;
 import com.rorasoft.roragame.Utils.UiHelper;
 

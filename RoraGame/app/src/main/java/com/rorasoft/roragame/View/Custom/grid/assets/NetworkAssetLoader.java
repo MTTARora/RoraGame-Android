@@ -5,7 +5,7 @@ import android.content.Context;
 import com.limelight.LimeLog;
 import com.limelight.nvstream.http.NvHTTP;
 import com.rorasoft.roragame.Services.binding.PlatformBinding;
-import com.rorasoft.roragame.Utils.ServerHelper;
+import com.rorasoft.roragame.Utils.Helper.ServerHelper;
 
 import java.io.IOException;
 import java.io.InputStream;

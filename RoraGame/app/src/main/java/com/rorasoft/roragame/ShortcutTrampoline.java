@@ -15,7 +15,7 @@ import com.rorasoft.roragame.View.AppView;
 import com.rorasoft.roragame.Model.computers.ComputerManagerListener;
 import com.rorasoft.roragame.Model.computers.ComputerManagerService;
 import com.rorasoft.roragame.Utils.Dialog;
-import com.rorasoft.roragame.Utils.ServerHelper;
+import com.rorasoft.roragame.Utils.Helper.ServerHelper;
 import com.rorasoft.roragame.Utils.SpinnerDialog;
 import com.rorasoft.roragame.Utils.UiHelper;
 import com.rorasoft.roragame.View.PcView;

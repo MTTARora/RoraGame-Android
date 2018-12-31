@@ -23,9 +23,9 @@ import com.rorasoft.roragame.Services.preferences.StreamSettings;
 import com.rorasoft.roragame.View.Adapter.AdapterFragment;
 import com.rorasoft.roragame.View.Adapter.AdapterFragmentCallbacks;
 import com.rorasoft.roragame.Utils.Dialog;
-import com.rorasoft.roragame.Utils.HelpLauncher;
-import com.rorasoft.roragame.Utils.ServerHelper;
-import com.rorasoft.roragame.Utils.ShortcutHelper;
+import com.rorasoft.roragame.Utils.Helper.HelpLauncher;
+import com.rorasoft.roragame.Utils.Helper.ServerHelper;
+import com.rorasoft.roragame.Utils.Helper.ShortcutHelper;
 import com.rorasoft.roragame.Utils.UiHelper;
 
 import android.app.Activity;
