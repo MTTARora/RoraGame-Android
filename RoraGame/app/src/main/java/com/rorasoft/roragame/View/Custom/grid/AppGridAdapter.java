@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.limelight.LimeLog;
 import com.limelight.nvstream.http.ComputerDetails;
+import com.rorasoft.roragame.Model.App.AppObject;
 import com.rorasoft.roragame.View.AppView;
 import com.rorasoft.roragame.R;
 import com.rorasoft.roragame.View.Custom.grid.assets.CachedAppAssetLoader;
@@ -18,7 +19,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 @SuppressWarnings("unchecked")
-public class AppGridAdapter extends GenericGridAdapter<AppView.AppObject> {
+public class AppGridAdapter extends GenericGridAdapter<AppObject> {
     private static final int ART_WIDTH_PX = 300;
     private static final int SMALL_WIDTH_DP = 100;
     private static final int LARGE_WIDTH_DP = 150;
@@ -58,15 +59,15 @@ public class AppGridAdapter extends GenericGridAdapter<AppView.AppObject> {
     }
 
     private void sortList() {
-        Collections.sort(itemList, new Comparator<AppView.AppObject>() {
+        Collections.sort(itemList, new Comparator<AppObject>() {
             @Override
-            public int compare(AppView.AppObject lhs, AppView.AppObject rhs) {
+            public int compare(AppObject lhs, AppObject rhs) {
                 return lhs.app.getAppName().toLowerCase().compareTo(rhs.app.getAppName().toLowerCase());
             }
         });
     }
 
-    public void addApp(AppView.AppObject app) {
+    public void addApp(AppObject app) {
         // Queue a request to fetch this bitmap into cache
         loader.queueCacheLoad(app.app);
 
@@ -75,19 +76,19 @@ public class AppGridAdapter extends GenericGridAdapter<AppView.AppObject> {
         sortList();
     }
 
-    public void removeApp(AppView.AppObject app) {
+    public void removeApp(AppObject app) {
         itemList.remove(app);
     }
 
     @Override
-    public boolean populateImageView(ImageView imgView, ProgressBar prgView, AppView.AppObject obj) {
+    public boolean populateImageView(ImageView imgView, ProgressBar prgView, AppObject obj) {
         // Let the cached asset loader handle it
         loader.populateImageView(obj.app, imgView, prgView);
         return true;
     }
 
     @Override
-    public boolean populateTextView(TextView txtView, AppView.AppObject obj) {
+    public boolean populateTextView(TextView txtView, AppObject obj) {
         // Select the text view so it starts marquee mode
         txtView.setSelected(true);
 
@@ -96,7 +97,7 @@ public class AppGridAdapter extends GenericGridAdapter<AppView.AppObject> {
     }
 
     @Override
-    public boolean populateOverlayView(ImageView overlayView, AppView.AppObject obj) {
+    public boolean populateOverlayView(ImageView overlayView, AppObject obj) {
         if (obj.isRunning) {
             // Show the play button overlay
             overlayView.setImageResource(R.drawable.ic_play);

@@ -26,7 +26,7 @@ import com.rorasoft.roragame.Utils.Dialog;
 import com.rorasoft.roragame.Utils.Helper.HelpLauncher;
 import com.rorasoft.roragame.Utils.Helper.ServerHelper;
 import com.rorasoft.roragame.Utils.Helper.ShortcutHelper;
-import com.rorasoft.roragame.Utils.UiHelper;
+import com.rorasoft.roragame.Utils.Helper.UiHelper;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -40,6 +40,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -57,7 +58,7 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-public class PcView extends Activity implements AdapterFragmentCallbacks {
+public class PcView extends AppCompatActivity implements AdapterFragmentCallbacks {
     private RelativeLayout noPcFoundLayout;
     private PcGridAdapter pcGridAdapter;
     private ShortcutHelper shortcutHelper;
@@ -216,7 +217,7 @@ public class PcView extends Activity implements AdapterFragmentCallbacks {
             }
         });
 
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(R.id.pcFragmentContainer, new AdapterFragment())
                 .commitAllowingStateLoss();
 

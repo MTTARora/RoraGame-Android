@@ -1,4 +1,4 @@
-package com.rorasoft.roragame.Utils;
+package com.rorasoft.roragame.Utils.Helper;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -14,6 +14,7 @@ import android.view.WindowManager;
 import com.limelight.nvstream.http.ComputerDetails;
 import com.rorasoft.roragame.R;
 import com.rorasoft.roragame.Services.preferences.PreferenceConfiguration;
+import com.rorasoft.roragame.Utils.Dialog;
 
 import java.util.Locale;
 

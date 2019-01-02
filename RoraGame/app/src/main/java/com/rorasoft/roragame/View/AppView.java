@@ -9,6 +9,7 @@ import com.limelight.nvstream.http.ComputerDetails;
 import com.limelight.nvstream.http.NvApp;
 import com.limelight.nvstream.http.NvHTTP;
 import com.limelight.nvstream.http.PairingManager;
+import com.rorasoft.roragame.Model.App.AppObject;
 import com.rorasoft.roragame.R;
 import com.rorasoft.roragame.View.Adapter.AdapterFragment;
 import com.rorasoft.roragame.View.Adapter.AdapterFragmentCallbacks;
@@ -21,7 +22,7 @@ import com.rorasoft.roragame.Utils.Dialog;
 import com.rorasoft.roragame.Utils.Helper.ServerHelper;
 import com.rorasoft.roragame.Utils.Helper.ShortcutHelper;
 import com.rorasoft.roragame.Utils.SpinnerDialog;
-import com.rorasoft.roragame.Utils.UiHelper;
+import com.rorasoft.roragame.Utils.Helper.UiHelper;
 
 import android.app.Activity;
 import android.app.Service;
@@ -33,6 +34,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -46,7 +48,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 
-public class AppView extends Activity implements AdapterFragmentCallbacks {
+public class AppView extends AppCompatActivity implements AdapterFragmentCallbacks {
     private AppGridAdapter appGridAdapter;
     private String uuidString;
     private ShortcutHelper shortcutHelper;
@@ -125,7 +127,7 @@ public class AppView extends Activity implements AdapterFragmentCallbacks {
                             // cause the activity to be destroyed when we try to commit
                             // I haven't been able to, so we have this try-catch block.
                             try {
-                                getFragmentManager().beginTransaction()
+                                getSupportFragmentManager().beginTransaction()
                                         .replace(R.id.appFragmentContainer, new AdapterFragment())
                                         .commitAllowingStateLoss();
                             } catch (IllegalStateException e) {
@@ -266,7 +268,8 @@ public class AppView extends Activity implements AdapterFragmentCallbacks {
         label.setText(computerName);
 
         // Add a launcher shortcut for this PC (forced, since this is user interaction)
-        shortcutHelper.createAppViewShortcut(uuidString, computerName, uuidString, true);
+        //shortcutHelper.createAppViewShortcut(uuidString, computerName, uuidString, true);
+        shortcutHelper.createAppViewShortcut(uuidString, uuidString, true);
         shortcutHelper.reportShortcutUsed(uuidString);
 
         // Bind to the computer manager service
@@ -559,23 +562,6 @@ public class AppView extends Activity implements AdapterFragmentCallbacks {
         });
         registerForContextMenu(listView);
         listView.requestFocus();
-    }
-
-    public class AppObject {
-        public final NvApp app;
-        public boolean isRunning;
-
-        public AppObject(NvApp app) {
-            if (app == null) {
-                throw new IllegalArgumentException("app must not be null");
-            }
-            this.app = app;
-        }
-
-        @Override
-        public String toString() {
-            return app.getAppName();
-        }
     }
 
 }

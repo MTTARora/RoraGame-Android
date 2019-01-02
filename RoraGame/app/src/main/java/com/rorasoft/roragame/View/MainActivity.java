@@ -14,11 +14,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AbsListView;
 import android.widget.Toast;
 
 import com.rorasoft.roragame.R;
 import com.rorasoft.roragame.Utils.Helper.FragmentHelper;
 import com.rorasoft.roragame.Utils.SupportKeys;
+import com.rorasoft.roragame.View.Adapter.AdapterFragmentCallbacks;
+import com.rorasoft.roragame.View.GameList.GameListFragment;
 import com.rorasoft.roragame.View.Home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -79,8 +82,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentHelper.changeFragment(HomeFragment.newInstance(), SupportKeys.HOME_TAG_FRAGMENT, 0, 0);
 
         } else if (id == R.id.nav_list_games) {
-
+            getSupportActionBar().setTitle("List Games");
+            fragmentHelper.changeFragment(GameListFragment.newInstance(), SupportKeys.GAME_LIST_TAG_FRAGMENT, 0, 0);
         }
+
 //        else if (id == R.id.nav_slideshow) {
 //
 //        } else if (id == R.id.nav_manage) {

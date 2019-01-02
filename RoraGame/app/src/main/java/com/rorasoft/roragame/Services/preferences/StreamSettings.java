@@ -19,7 +19,7 @@ import com.limelight.LimeLog;
 import com.rorasoft.roragame.View.PcView;
 import com.rorasoft.roragame.R;
 import com.rorasoft.roragame.Services.binding.video.MediaCodecHelper;
-import com.rorasoft.roragame.Utils.UiHelper;
+import com.rorasoft.roragame.Utils.Helper.UiHelper;
 
 public class StreamSettings extends Activity {
     private PreferenceConfiguration previousPrefs;

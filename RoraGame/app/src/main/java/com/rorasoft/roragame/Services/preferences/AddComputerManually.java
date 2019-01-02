@@ -13,7 +13,7 @@ import com.rorasoft.roragame.Model.computers.ComputerManagerService;
 import com.rorasoft.roragame.R;
 import com.rorasoft.roragame.Utils.Dialog;
 import com.rorasoft.roragame.Utils.SpinnerDialog;
-import com.rorasoft.roragame.Utils.UiHelper;
+import com.rorasoft.roragame.Utils.Helper.UiHelper;
 
 import android.app.Activity;
 import android.app.Service;

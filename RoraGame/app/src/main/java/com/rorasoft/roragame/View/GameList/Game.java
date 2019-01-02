@@ -28,7 +28,7 @@ import com.rorasoft.roragame.View.Streaming.StreamView;
 import com.rorasoft.roragame.Utils.Dialog;
 import com.rorasoft.roragame.Utils.Helper.ShortcutHelper;
 import com.rorasoft.roragame.Utils.SpinnerDialog;
-import com.rorasoft.roragame.Utils.UiHelper;
+import com.rorasoft.roragame.Utils.Helper.UiHelper;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -241,7 +241,8 @@ public class Game extends Activity implements SurfaceHolder.Callback,
 
         // Add a launcher shortcut for this PC (forced, since this is user interaction)
         shortcutHelper = new ShortcutHelper(this);
-        shortcutHelper.createAppViewShortcut(uuid, pcName, uuid, true);
+//        shortcutHelper.createAppViewShortcut(uuid, pcName, uuid, true);
+        shortcutHelper.createAppViewShortcut(uuid, uuid, true);
         shortcutHelper.reportShortcutUsed(uuid);
 
         // Initialize the MediaCodec helper before creating the decoder

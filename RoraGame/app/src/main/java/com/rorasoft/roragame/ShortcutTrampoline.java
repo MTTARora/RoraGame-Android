@@ -17,7 +17,7 @@ import com.rorasoft.roragame.Model.computers.ComputerManagerService;
 import com.rorasoft.roragame.Utils.Dialog;
 import com.rorasoft.roragame.Utils.Helper.ServerHelper;
 import com.rorasoft.roragame.Utils.SpinnerDialog;
-import com.rorasoft.roragame.Utils.UiHelper;
+import com.rorasoft.roragame.Utils.Helper.UiHelper;
 import com.rorasoft.roragame.View.PcView;
 
 import java.util.ArrayList;

@@ -1,8 +1,8 @@
 package com.rorasoft.roragame.View.Adapter;
 
-
 import android.app.Activity;
-import android.app.Fragment;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,13 +12,33 @@ import android.widget.AbsListView;
 import com.rorasoft.roragame.R;
 
 public class AdapterFragment extends Fragment {
+
     private AdapterFragmentCallbacks callbacks;
 
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
+    private static final String kCallbacks = "kCallBack";
 
-        callbacks = (AdapterFragmentCallbacks) activity;
+//    @Override
+//    public void onAttach(Activity activity) {
+//        super.onAttach(activity);
+//
+//        callbacks = (AdapterFragmentCallbacks) activity;
+//    }
+
+    public static AdapterFragment newInstance(AdapterFragmentCallbacks callbacks) {
+
+        Bundle args = new Bundle();
+        args.putSerializable(kCallbacks, callbacks);
+        AdapterFragment fragment = new AdapterFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if(getArguments() != null) {
+            this.callbacks = (AdapterFragmentCallbacks) getArguments().getSerializable(kCallbacks);
+        }
     }
 
     @Override
