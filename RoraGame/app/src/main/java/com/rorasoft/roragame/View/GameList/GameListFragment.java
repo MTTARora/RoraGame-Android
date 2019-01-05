@@ -308,11 +308,10 @@ public class GameListFragment extends Fragment implements AdapterFragmentCallbac
 //        uuidString = getIntent().getStringExtra(UUID_EXTRA);
         uuidString = "69001187-335a-4c69-bc45-1f696a123f00";
 
-        //String computerName = getIntent().getStringExtra(NAME_EXTRA);
+        String computerName = "Unknown";
 
         // Add a launcher shortcut for this PC (forced, since this is user interaction)
-//        shortcutHelper.createAppViewShortcut(uuidString, computerName, uuidString, true);
-        shortcutHelper.createAppViewShortcut(uuidString, uuidString, true);
+        shortcutHelper.createAppViewShortcut(uuidString, computerName, uuidString, true);
         shortcutHelper.reportShortcutUsed(uuidString);
 
         // Bind to the computer manager service

@@ -88,17 +88,17 @@ public class ShortcutHelper {
         }
     }
 
-    public void createAppViewShortcut(String id, String computerUuid, boolean forceAdd) {
+    public void createAppViewShortcut(String id, String computerName, String computerUuid, boolean forceAdd) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
             Intent i = new Intent(context, ShortcutTrampoline.class);
-//            i.putExtra(AppView.NAME_EXTRA, computerName);
+            i.putExtra(AppView.NAME_EXTRA, "");
             i.putExtra(AppView.UUID_EXTRA, computerUuid);
             i.setAction(Intent.ACTION_DEFAULT);
 
             ShortcutInfo sinfo = new ShortcutInfo.Builder(context, id)
                     .setIntent(i)
-//                    .setShortLabel(computerName)
-//                    .setLongLabel(computerName)
+                    .setShortLabel(computerName)
+                    .setLongLabel(computerName)
                     .setIcon(Icon.createWithResource(context, R.mipmap.ic_pc_scut))
                     .build();
 
@@ -124,8 +124,8 @@ public class ShortcutHelper {
         }
     }
 
-    public void createAppViewShortcut(String id, ComputerDetails details, boolean forceAdd) {
-        createAppViewShortcut(id, details.uuid.toString(), forceAdd);
+    public void createAppViewShortcut(String id, String computerName, ComputerDetails details, boolean forceAdd) {
+        createAppViewShortcut(id, computerName, details.uuid.toString(), forceAdd);
     }
 
     @TargetApi(Build.VERSION_CODES.O)

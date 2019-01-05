@@ -241,8 +241,7 @@ public class Game extends Activity implements SurfaceHolder.Callback,
 
         // Add a launcher shortcut for this PC (forced, since this is user interaction)
         shortcutHelper = new ShortcutHelper(this);
-//        shortcutHelper.createAppViewShortcut(uuid, pcName, uuid, true);
-        shortcutHelper.createAppViewShortcut(uuid, uuid, true);
+        shortcutHelper.createAppViewShortcut(uuid, pcName, uuid, true);
         shortcutHelper.reportShortcutUsed(uuid);
 
         // Initialize the MediaCodec helper before creating the decoder

@@ -658,7 +658,7 @@ public class PcView extends AppCompatActivity implements AdapterFragmentCallback
 
         // Add a launcher shortcut for this PC
         if (details.pairState == PairingManager.PairState.PAIRED) {
-            shortcutHelper.createAppViewShortcut(details.uuid.toString(), details, false);
+            shortcutHelper.createAppViewShortcut(details.uuid.toString(), details.name, details, false);
         }
 
         if (existingEntry != null) {

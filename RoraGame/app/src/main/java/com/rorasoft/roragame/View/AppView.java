@@ -268,8 +268,7 @@ public class AppView extends AppCompatActivity implements AdapterFragmentCallbac
         label.setText(computerName);
 
         // Add a launcher shortcut for this PC (forced, since this is user interaction)
-        //shortcutHelper.createAppViewShortcut(uuidString, computerName, uuidString, true);
-        shortcutHelper.createAppViewShortcut(uuidString, uuidString, true);
+        shortcutHelper.createAppViewShortcut(uuidString, computerName, uuidString, true);
         shortcutHelper.reportShortcutUsed(uuidString);
 
         // Bind to the computer manager service
