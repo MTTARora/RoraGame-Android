@@ -24,7 +24,7 @@ public class AppGridAdapter extends GenericGridAdapter<AppObject> {
     private static final int SMALL_WIDTH_DP = 100;
     private static final int LARGE_WIDTH_DP = 150;
 
-    private final CachedAppAssetLoader loader;
+    private final transient CachedAppAssetLoader loader;
 
     public AppGridAdapter(Activity activity, boolean listMode, boolean small, ComputerDetails computer, String uniqueId) {
         super(activity, listMode ? R.layout.simple_row : (small ? R.layout.app_grid_item_small : R.layout.app_grid_item));
