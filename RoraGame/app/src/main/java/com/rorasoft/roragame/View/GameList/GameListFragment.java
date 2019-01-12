@@ -46,6 +46,7 @@ import com.rorasoft.roragame.View.Adapter.AdapterFragmentCallbacks;
 import com.rorasoft.roragame.View.AppView;
 import com.rorasoft.roragame.View.Custom.grid.AppGridAdapter;
 
+import java.io.Serializable;
 import java.io.StringReader;
 import java.util.List;
 import java.util.UUID;
@@ -57,13 +58,13 @@ import java.util.UUID;
  * Use the {@link GameListFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GameListFragment extends Fragment implements AdapterFragmentCallbacks {
-    private AppGridAdapter appGridAdapter;
+public class GameListFragment extends Fragment implements AdapterFragmentCallbacks, Serializable {
+    private transient AppGridAdapter appGridAdapter;
     private String uuidString;
     private ShortcutHelper shortcutHelper;
 
-    private ComputerDetails computer;
-    private ComputerManagerService.ApplistPoller poller;
+    private transient ComputerDetails computer;
+    private transient ComputerManagerService.ApplistPoller poller;
     private SpinnerDialog blockingLoadSpinner;
     private String lastRawApplist;
     private int lastRunningAppId;
@@ -80,14 +81,7 @@ public class GameListFragment extends Fragment implements AdapterFragmentCallbac
     public final static String NAME_EXTRA = "Name";
     public final static String UUID_EXTRA = "UUID";
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    private ComputerManagerService.ComputerManagerBinder managerBinder;
+    private transient ComputerManagerService.ComputerManagerBinder managerBinder;
     private final ServiceConnection serviceConnection = new ServiceConnection() {
         public void onServiceConnected(ComponentName className, IBinder binder) {
             final ComputerManagerService.ComputerManagerBinder localBinder =

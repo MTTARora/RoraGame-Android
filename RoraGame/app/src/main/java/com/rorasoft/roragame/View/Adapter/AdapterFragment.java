@@ -17,12 +17,12 @@ public class AdapterFragment extends Fragment {
 
     private static final String kCallbacks = "kCallBack";
 
-//    @Override
-//    public void onAttach(Activity activity) {
-//        super.onAttach(activity);
-//
-//        callbacks = (AdapterFragmentCallbacks) activity;
-//    }
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        callbacks = (AdapterFragmentCallbacks) activity;
+    }
 
     public static AdapterFragment newInstance(AdapterFragmentCallbacks callbacks) {
 

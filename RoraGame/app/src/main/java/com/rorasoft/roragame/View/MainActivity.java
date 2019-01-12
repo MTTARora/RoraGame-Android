@@ -1,5 +1,6 @@
 package com.rorasoft.roragame.View;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -82,8 +83,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentHelper.changeFragment(HomeFragment.newInstance(), SupportKeys.HOME_TAG_FRAGMENT, 0, 0);
 
         } else if (id == R.id.nav_list_games) {
-            getSupportActionBar().setTitle("List Games");
-            fragmentHelper.changeFragment(GameListFragment.newInstance(), SupportKeys.GAME_LIST_TAG_FRAGMENT, 0, 0);
+//            getSupportActionBar().setTitle("List Games");
+//            fragmentHelper.changeFragment(GameListFragment.newInstance(), SupportKeys.GAME_LIST_TAG_FRAGMENT, 0, 0);
+
+            Intent i = new Intent(this, AppView.class);
+            i.putExtra(AppView.NAME_EXTRA, "Unknown");
+            i.putExtra(AppView.UUID_EXTRA, "69001187-335a-4c69-bc45-1f696a123f00");
+            startActivity(i);
         }
 
 //        else if (id == R.id.nav_slideshow) {
